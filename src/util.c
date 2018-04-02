@@ -3,8 +3,8 @@
 #include "chassis.h"
 #include "score.h"
 
-#define NOT_TRACKING() analog(LINE_TRACKER) < 800
-#define TRACKING() analog(LINE_TRACKER) > 800
+#define NOT_TRACKING() analog(LINE_TRACKER) < 1400
+#define TRACKING() analog(LINE_TRACKER) > 1400
 #define FORWARD 0
 #define BACKWARD 1
 
@@ -94,5 +94,15 @@ void getToPos()
         spinRight(100, 1);
     
     while(!isTracking())
-    	moveForward(100, 1);
+    	moveForward(100, 1);    
 }
+
+	void stopWait(){
+	
+	alloff();
+    
+    wait_for_any_button();
+        
+    wait_for_milliseconds(1000);
+      
+}        

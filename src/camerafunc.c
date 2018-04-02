@@ -23,7 +23,7 @@ void setupCamera(const char* config)
     cameraEnabled = true;
 
     while(cameraEnabled)
-        run();
+        runCamera();
 }
 
 // Get dimensions of an object. This is a messy function at the time.

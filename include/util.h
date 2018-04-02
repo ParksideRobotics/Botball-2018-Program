@@ -17,3 +17,5 @@ void correctPos();
 void skipLine(int direction, int linesToSkip);
 
 void getToPos();
+
+void stopWait();
