@@ -3,6 +3,10 @@
 #define LEFT_MOTOR 0
 #define RIGHT_MOTOR 1
 
+void moveForward(int distance);
+
+void moveBackward(int distance);
+
 void moveForward(int speed, int time);
 
 void moveBackward(int speed, int time);

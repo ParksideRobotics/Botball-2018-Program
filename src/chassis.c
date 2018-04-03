@@ -1,5 +1,28 @@
 #include "chassis.h"
 
+void moveForward(int distance) {
+    printf("Moving forward for distance %d", distance);
+    int dist = 0;
+    while(dist < distance) {
+        moveForward(100,1);
+        dist = get_motor_position_counter(LEFT_MOTOR);
+        printf("...%d", dist);
+    }
+    printf("\n");
+    stopWait();
+}
+
+void moveBackward(int distance) {
+    printf("Moving backwards for distance %d", distance);
+    int dist = distance;
+    while(dist > 0) {
+        moveBackward(100,1);
+        dist = get_motor_position_counter(LEFT_MOTOR);
+        printf("...%d", dist);
+    }
+    printf("\n");
+    stopWait();
+}
 void moveForward(int speed, int time)
 {
     motor(LEFT_MOTOR, speed);
