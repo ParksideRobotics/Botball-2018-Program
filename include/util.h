@@ -12,10 +12,8 @@ bool isTracking();
 
 void trackLine();
 
-void correctPos();
+void trackEdge();
 
 void skipLine(int direction, int linesToSkip);
 
 void getToPos();
-
-void stopWait();

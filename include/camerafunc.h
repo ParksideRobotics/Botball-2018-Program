@@ -11,4 +11,3 @@ void setupCamera(const char* config);
 void runCamera();
 
 int calcDist();
-int calcDistEx(int channel, int object);

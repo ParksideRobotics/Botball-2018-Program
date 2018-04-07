@@ -6,17 +6,16 @@
 
 void score()
 {
-
-    //wait_for_light(1);
-
     printf("skips 2 lines\n");		//step 1 skips 2 lines
     skipLine(FORWARD, 2);
 
+    #ifdef __DEBUG
     stopWait();
+    #endif
 
     printf("move until 40 ticks\n"); //step 2 forwards 6 milliseconds
-    clear_motor_position_counter(0);
-    clear_motor_position_counter(1);
+    cmpc(0);
+    cmpc(1);
     //moveForward(100,10);
 
     moveForward(20);
@@ -28,7 +27,9 @@ void score()
     while(!isTracking())	//step 4 not tracking = turn right -- finds left edge
 	    spinRight(100, 1);
     
+    #ifdef __DEBUG
     stopWait();
+    #endif
 
     printf("tracking spin right-- finds right edge\n");		
     while(isTracking())					//step 5 tracking = turn right -- finds left edge
@@ -64,7 +65,9 @@ void score()
 
     moveBackward(3880);
 
+    #ifdef __DEBUG
     stopWait();
+    #endif
 
     printf("turn left\n");		//step 11 turn left
     spinLeft(100,2000);
@@ -77,7 +80,9 @@ void score()
     printf("open claw\n");		//step 13 open claw
     openClaw();
 
+    #ifdef __DEBUG
     stopWait();
+    #endif
 
     moveBackward(3915);
 
@@ -100,7 +105,9 @@ void score()
 
     moveForward(3915);
 
+    #ifdef __DEBUG
     stopWait();
+    #endif
 
     printf("open claw\n");		//step 22 open claw
     openClaw();
@@ -119,31 +126,4 @@ void score()
 
     printf("close claw\n");		//step 28 close claw
     closeClaw();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

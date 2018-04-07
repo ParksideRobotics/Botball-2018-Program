@@ -9,7 +9,9 @@ void moveForward(int distance) {
         printf("...%d", dist);
     }
     printf("\n");
+    #ifdef __DEBUG
     stopWait();
+    #endif
 }
 
 void moveBackward(int distance) {
@@ -21,7 +23,9 @@ void moveBackward(int distance) {
         printf("...%d", dist);
     }
     printf("\n");
+    #ifdef __DEBUG
     stopWait();
+    #endif
 }
 void moveForward(int speed, int time)
 {

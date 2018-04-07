@@ -7,5 +7,3 @@
 #include "servos.h"
 
 void score();
-
-bool readyScore();

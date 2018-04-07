@@ -10,6 +10,9 @@
 
 void init()
 {
+    #ifndef __DEBUG
+    wait_for_light(1);
+    #endif
     enable_servos();
 }
 
@@ -32,20 +35,15 @@ void skipLine(int direction, int linesToSkip)
     int i;
     for(i=0;i<linesToSkip;i++)
     {
-        if(FORWARD == direction)
-        {
+        if(FORWARD == direction){
             while(!isTracking())
                 moveForward(100, 1);
-
             while(isTracking())
                 moveForward(100, 1);
         }
-
-        if(BACKWARD == direction)
-        {
+        if(BACKWARD == direction) {
             while(!isTracking())
-                moveBackward(100, 1);
-            
+                moveBackward(100, 1);          
             while(isTracking())
                 moveBackward(100, 1);
         }
@@ -53,7 +51,7 @@ void skipLine(int direction, int linesToSkip)
 }
 
 
-void correctPos()
+void trackEdge()
 {
     while(isTracking())
         veerRight(75, 10, 500);
@@ -97,7 +95,8 @@ void getToPos()
     	moveForward(100, 1);    
 }
 
-	void stopWait(){
+void stopWait()
+{
 	
 	alloff();
     

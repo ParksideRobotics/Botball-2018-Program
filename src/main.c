@@ -1,4 +1,3 @@
-#include <kipr/botball.h>
 #include "stdafx.h"
 
 int main()
