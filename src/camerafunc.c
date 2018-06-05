@@ -1,13 +1,16 @@
 #include "camerafunc.h"
 
+
 #define STD_OBJECT_HEIGHT_MM 30
 #define CAMERA_HEIGHT_MM 100
+
 
 #define x 'x'
 #define y 'y'
 #define z 'z'
 
 bool cameraEnabled = false;
+
 
 // Setup Camera, defacto "constructor" of the camera "class".
 // Specify config, this function doesn't do much, I just don't like using camera_open() and camera_load_config()

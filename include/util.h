@@ -1,3 +1,5 @@
+#ifndef UTIL_H_
+#define UTIL_H_
 
 #include <kipr/botball.h>
 #include <stdbool.h>
@@ -17,3 +19,5 @@ void trackEdge();
 void skipLine(int direction, int linesToSkip);
 
 void getToPos();
+
+#endif /* UTIL_H_ */

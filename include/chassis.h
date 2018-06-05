@@ -1,4 +1,7 @@
-#include <kipr/botball.h>
+#ifndef CHASSIS_H_
+#define CHASSIS_H_
+
+#include <../kipr/botball.h>
 
 #define LEFT_MOTOR 0
 #define RIGHT_MOTOR 1
@@ -22,3 +25,5 @@ void veerLeft(int speed, int veerOffset, int time);
 void turnLeft(int speed, int time);
 
 void turnRight(int speed, int time);
+
+#endif /* CHASSIS_H_ */
