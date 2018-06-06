@@ -48,7 +48,7 @@ int calcDist()
     return (CAM.std_object_height_mm * get_camera_height()) / (getDimensions(y, 0, 0));
 }
 
-// Main function of the camera. Use this either in score() or run().
+// Main function of the camera. Use this in score().
 void runCamera()
 {
     if(!CAM.cameraEnabled)
