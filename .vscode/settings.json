@@ -1,3 +1,10 @@
 {
-    "C_Cpp.intelliSenseEngineFallback": "Enabled"
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "files.associations": {
+        "iterator": "cpp",
+        "util.h": "c",
+        "fstream": "c",
+        "locale": "c",
+        "__locale": "c"
+    }
 }

@@ -37,15 +37,15 @@ void skipLine(int direction, int linesToSkip)
     {
         if(FORWARD == direction){
             while(!isTracking())
-                moveForward(100, 1);
+                DRIVE.moveForward(100, 1);
             while(isTracking())
-                moveForward(100, 1);
+                DRIVE.moveForward(100, 1);
         }
         if(BACKWARD == direction) {
             while(!isTracking())
-                moveBackward(100, 1);          
+                DRIVE.moveBackward(100, 1);          
             while(isTracking())
-                moveBackward(100, 1);
+                DRIVE.moveBackward(100, 1);
         }
     }
 }
@@ -54,10 +54,10 @@ void skipLine(int direction, int linesToSkip)
 void trackEdge()
 {
     while(isTracking())
-        veerRight(75, 10, 500);
+        DRIVE.veerRight(75, 10, 500);
 
     while(!isTracking())
-        veerLeft(75, 10, 500);
+        DRIVE.veerLeft(75, 10, 500);
 }
 
 void trackLine()
@@ -67,7 +67,7 @@ void trackLine()
     cmpc(RIGHT_MOTOR);
     cmpc(LEFT_MOTOR);
 
-    score();
+    SCORE.score();
 }
 
 void getToPos()
@@ -82,17 +82,17 @@ void getToPos()
 
     skipLine(FORWARD, 2);
     
-    moveForward(100,6);
+    DRIVE.moveForward(100,6);
         
 
     while(!isTracking())
-        spinRight(100, 1);
+        DRIVE.spinRight(100, 1);
    
     while(isTracking())
-        spinRight(100, 1);
+        DRIVE.spinRight(100, 1);
     
     while(!isTracking())
-    	moveForward(100, 1);    
+    	DRIVE.moveForward(100, 1);    
 }
 
 void stopWait()

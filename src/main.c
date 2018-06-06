@@ -2,11 +2,11 @@
 
 int main()
 {
-    init();
+    UTIL.init();
     
-    score();
+    SCORE.score();
     
-    shutDown();
+    UTIL.shutDown();
     
     return 0;
 }

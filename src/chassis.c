@@ -1,6 +1,6 @@
 #include "chassis.h"
 
-void moveForward(int distance) {
+void moveForwardA(int distance) {
     printf("Moving forward for distance %d", distance);
     int dist = 0;
     while(dist < distance) {
@@ -14,7 +14,7 @@ void moveForward(int distance) {
     #endif
 }
 
-void moveBackward(int distance) {
+void moveBackwardA(int distance) {
     printf("Moving backwards for distance %d", distance);
     int dist = distance;
     while(dist > 0) {

@@ -1,7 +1,7 @@
 #ifndef CAMERAFUNC_H_
 #define CAMERAFUNC_H_
 
-#include <kipr/botball.h>
+#include "../kipr/botball.h"
 #include <stdlib.h>
 #include <stdbool.h>
 #include "chassis.h"
@@ -70,9 +70,8 @@ typedef struct camera {
     int camera_height_mm;
     int std_object_height_mm;
     void (*setupCamera)(const char* config);
-    void (*runCamera);
-    int (*calcDist);
-};
-extern camera CAM;
+    void (*runCamera)(void);
+    int (*calcDist)(void);
+} Camera;
 
 #endif /* CAMERAFUNC_H_ */
