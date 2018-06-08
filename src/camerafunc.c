@@ -3,12 +3,13 @@
 
 Camera CAM;
 
-#define x 'x'
-#define y 'y'
-#define z 'z'
+typedef struct {
+    char x = 'x';
+    char y = 'y';
+    char z = 'z';
+} Axes;
+extern Axes gAxes;
 
-// Setup Camera, defacto "constructor" of the camera "class".
-// Specify config, this function doesn't do much, I just don't like using camera_open() and camera_load_config()
 void setupCamera(const char* config)
 {
     CAM.camera_height_mm = 100;
@@ -22,27 +23,19 @@ void setupCamera(const char* config)
     camera_load_config(config);
     
     CAM.cameraEnabled = true;
-
-    while(CAM.cameraEnabled)
-        runCamera();
-
-    camera_close();
 }
 
-// Get dimensions of an object. This is a messy function at the time.
-// Will fix, but comes in handy when doing algorithims.
 int getDimensions(char axis, int channel, int object)
 {
     switch(axis)
     {
-        case 'x': return get_object_bbox_width(channel, object); break;
-        case 'y': return get_object_bbox_height(channel, object); break;
+        case gAxes.x: return get_object_bbox_width(channel, object);
+        case gAxes.y: return get_object_bbox_height(channel, object);
         default: break;
     } 
     return 0;
 }
 
-// Calculate Distance to an object using focal height and length algorithim. Default Function.
 int calcDist()
 {
     return (CAM.std_object_height_mm * get_camera_height()) / (getDimensions(y, 0, 0));
@@ -53,6 +46,11 @@ void runCamera()
 {
     if(!CAM.cameraEnabled)
         return;
+
+    while(!CAM.cameraEnabled)
+    {
+        
+    }
          
-    //TODO: Add code. xd         
+    camera_close();    
 }
